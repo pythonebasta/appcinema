@@ -39,7 +39,7 @@ class RegistaTestCase(TestCase):
          
         Regista.objects.create(nome="Guido", cognome="van Rossum")
 
-    def test_giornalista_str(self):
+    def test_regista_str(self):
         """ testiamo la corretta rappresentazione in stringa del modello Regista """
         regista = Regista.objects.get(nome="Guido")
         self.assertEquals(regista.__str__(), "Guido van Rossum")
