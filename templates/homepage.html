@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+
+{% block head_title %}{{ block.super }} | homepage{% endblock head_title %}
+
+{% block content %}
+<div class="container">
+
+    <h3 style = "text-align:center">Homepage </h3>
+    
+</div>
+<!--     {{ film }}
+    {{ registi }} -->
+
+    <br>
+    <div class="container">
+    <h4 style = "text-align:center">Registi:</h4>
+    <br>
+    {% for regista in registi %}
+        <p style = "text-align:center">{{ regista.nome }} {{ regista.cognome }}</p>
+    {% endfor %}
+    </div>
+    <hr>
+    <div class="container">
+    <h4 style = "text-align:center">Film:</h4>
+    <br>
+    {% for film in film %}
+        <p style = "text-align:center"><strong>Titolo: </strong><a href="{{ film.get_absolute_url }}">{{ film.titolo }}</a></p>
+        <!-- <p style = "text-align:center"><strong>Contenuto: </strong>{{ film.contenuto }}</p> -->
+        <p style = "text-align:center"><strong>Regista: </strong>{{ film.regista }}</p>
+        <hr>
+    {% endfor %}
+    </div>
+    <br>
+    <hr>
+<!-- <div class="container"> 
+    <h4 style = "text-align:center">Registi:</h4>
+    <br>
+    {% for regista in registi %}
+        <p style = "text-align:center">{{ regista.nome }} {{ regista.cognome }}</p>
+        <p style = "text-align:center">Film:</p>
+        {% for film in regista.film.all %}
+            <p style = "text-align:center">{{ film.titolo }}</p>
+        {% empty %}
+            <p style = "text-align:center">{{ regista.nome }} non ha scritto alcun film!</p>
+        {% endfor %}
+        <hr>
+    {% endfor %}
+</div> -->
+<!--     <nav>
+        <a href="https://docs.djangoproject.com/en/2.0/ref/models/options/#default-related-name">LINK RELAZIONE INVERSA</a>
+        <a href="https://docs.djangoproject.com/en/2.0/topics/templates/">Link Templates</a>
+        <a href="https://docs.djangoproject.com/en/2.0/ref/templates/language/">Django Template Language</a>
+        <a href="https://docs.djangoproject.com/en/2.0/ref/templates/builtins/#ref-templates-builtins-tags">Link Template Tag Reference</a>
+    </nav> -->
+
+{% endblock content %}

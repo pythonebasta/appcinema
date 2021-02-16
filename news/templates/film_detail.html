@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+<div class="container">
+
+{% block head_title %}{{ block.super }} | {{ film.titolo }}{% endblock head_title %}
+
+{% block content %}
+    <h3 style = "text-align:center" >Dettaglio Film.</h3>
+    <br><br>
+    <h1 style = "text-align:center" >{{ film.titolo }}</h1>
+    <br>
+    <div class= "mioDivCustom">
+        <h5>{{ film.contenuto }}</h5>
+    </div>
+    <br>
+    <h5 style = "text-align:center" >Anno di produzione: {{ film.anno }}</h5>
+        
+    <h5 style = "text-align:center">Regista: {{ film.regista }}</h5>
+
+{% endblock content %}
+</div>

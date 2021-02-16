@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+<div class="container">
+   
+{% block head_title %}{{ block.super }} | Lista Film{% endblock head_title %}
+
+{% block content %}
+
+    <h4 style = "text-align:center">Film:</h4>
+    {% for film in film %}
+        <p style = "text-align:center"><strong>Titolo: </strong><a href="{{ film.get_absolute_url }}">{{ film.titolo }}</a></p>
+        <!-- <p style = "text-align:center"><strong>Contenuto: </strong>{{ film.contenuto }}</p> -->
+        <p style = "text-align:center"><strong>Autore: </strong>{{ film.regista }}</p>
+        <hr>
+    {% endfor %}
+
+{% endblock content %}
+</div>
