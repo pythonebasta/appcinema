@@ -34,13 +34,13 @@ class HomeViewTests(TestCase):
 
 # test per il modello Giornalista (news.models.Giornalista)
 class RegistaTestCase(TestCase):
-    """ una prima serie di test per verificare la corretta implementazione del metodo Giornalista """
+    """ una prima serie di test per verificare la corretta implementazione del metodo Regista """
 
     def setUp(self):
          """ grazie a setUp, ciascun metodo viene testato con dati creati appositmente per il test """
         Regista.objects.create(nome="Guido", cognome="van Rossum")
 
     def test_giornalista_str(self):
-        """ testiamo la corretta rappresentazione in stringa del modello Giornalista """
+        """ testiamo la corretta rappresentazione in stringa del modello Regista """
         regista = Regista.objects.get(nome="Guido")
         self.assertEquals(regista.__str__(), "Guido van Rossum")
