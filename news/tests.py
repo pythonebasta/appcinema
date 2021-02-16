@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.urls import resolve, reverse
 from news.views import home
-from news.models import Giornalista
+from news.models import Regista
 # Create your tests here.
 
 ####################################################################################################
@@ -33,14 +33,14 @@ class HomeViewTests(TestCase):
 
 
 # test per il modello Giornalista (news.models.Giornalista)
-class GiornalistaTestCase(TestCase):
+class RegistaTestCase(TestCase):
     """ una prima serie di test per verificare la corretta implementazione del metodo Giornalista """
 
     def setUp(self):
          """ grazie a setUp, ciascun metodo viene testato con dati creati appositmente per il test """
-        Giornalista.objects.create(nome="Guido", cognome="van Rossum")
+        Regista.objects.create(nome="Guido", cognome="van Rossum")
 
     def test_giornalista_str(self):
         """ testiamo la corretta rappresentazione in stringa del modello Giornalista """
-        giornalista = Giornalista.objects.get(nome="Guido")
-        self.assertEquals(giornalista.__str__(), "Guido van Rossum")
+        regista = Regista.objects.get(nome="Guido")
+        self.assertEquals(regista.__str__(), "Guido van Rossum")
