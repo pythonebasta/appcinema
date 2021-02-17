@@ -13,6 +13,6 @@ test:
 staging:
   stage: deploy
   script:
-
+    - echo "deployed"
   only:
     - master
