@@ -1,5 +1,9 @@
 image: python:3.5
+stages:
+  - build
 
+build:
+  stage: build
 all_tests:
   script:
    - sh ./sh_scripts/install.sh
