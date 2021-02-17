@@ -1,20 +1,9 @@
-stages:
-  - test
-  - deploy
+image: python:3.5
 
-test:
-  stage: test
+all_tests:
   script:
-  - apt update -qy
-  - apt install python3 python3-pip virtualenvwrapper -qy
-  - virtualenv --python=python3 v_env/
-  - source v_env/bin/activate
-  - pip install -r requirements.txt
-  - python3 manage.py test 
-
-staging:
-  stage: deploy
-  script:
-    - echo "deployed"
+   - sh ./sh_scripts/install.sh
+   - python3 manage.py test -k
+  when: on_success
   only:
-    - master
+    - dev
